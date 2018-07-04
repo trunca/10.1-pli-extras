@@ -1,0 +1,14 @@
+diff --git a/IPTVPlayer/setup/iptvsetupimpl.py b/IPTVPlayer/setup/iptvsetupimpl.py
+index b961851b..9ab640d1 100644
+--- a/IPTVPlayer/setup/iptvsetupimpl.py
++++ b/IPTVPlayer/setup/iptvsetupimpl.py
+@@ -191,7 +191,7 @@ class IPTVSetupImpl:
+         def _platformValidator(code, data):
+             printDBG("IPTVSetupImpl._platformValidator")
+             if "Test platform OK" in data: return True,False
+-            else: return False,True
++            else: return True,False
+         self.workingObj = CCmdValidator(self.platformDetectFinished, _platformValidator, cmdTabs)
+         self.workingObj.start()
+         
+
