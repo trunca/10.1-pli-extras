@@ -3,6 +3,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 SRC_URI_append += "\
 	file://defaultskin.patch \
 	file://09-undefine-macro-HAVE_CONFIG_H.patch \
+	file://workaround-for-dns-no-dhcp.patch \
 	${@bb.utils.contains("IMAGE_BASENAME", "vision", "file://prince.patch", "", d)} \
 	"
 
