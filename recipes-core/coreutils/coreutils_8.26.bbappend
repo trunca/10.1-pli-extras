@@ -1,3 +1,4 @@
+# I hope it solves the PAK archive (application/x-pak) problem
 PACKAGES =+ "${PN}-realpath ${PN}-stdbuf"
 
 FILES_${PN}-realpath = "${bindir}/realpath.${PN}"
