@@ -52,7 +52,7 @@ echo ""
 echo "sstate-control cleaned!"
 echo ""
 #echo "Space will be freed after this operation:"
-#du -sh build/tmp/stamps/$MACHINE-oe-linux | cut -f1
+#du -sh build/tmp/stamps/$MACHINE-oe-linu* | cut -f1
 rm -rf build/tmp/stamps/$MACHINE-oe-linu*
 echo ""
 echo "stamps cleaned!"
@@ -64,7 +64,7 @@ echo ""
 echo "sysroots-components cleaned!"
 echo ""
 #echo "Space will be freed after this operation:"
-#du -sh build/tmp/work/$MACHINE-oe-linux | cut -f1
+#du -sh build/tmp/work/$MACHINE-oe-linu* | cut -f1
 rm -rf build/tmp/work/$MACHINE-oe-linu*
 echo ""
 echo "work cleaned!"
