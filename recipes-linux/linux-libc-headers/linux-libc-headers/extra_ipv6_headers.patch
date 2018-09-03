@@ -216,7 +216,7 @@
 +#endif /* _UAPI_LIBC_COMPAT_H */
 --- a/include/linux/in6.h	2009-12-03 04:51:21.000000000 +0100
 +++ b/include/linux/in6.h	2017-11-08 14:29:26.082380312 +0100
-@@ -21,24 +21,34 @@
+@@ -21,22 +21,32 @@
  #ifndef _LINUX_IN6_H
  #define _LINUX_IN6_H
  
@@ -231,10 +231,8 @@
   */
  
 +#if __UAPI_DEF_IN6_ADDR
- struct in6_addr
- {
- 	union 
- 	{
+ struct in6_addr {
+ 	union {
  		__u8		u6_addr8[16];
 +#if __UAPI_DEF_IN6_ADDR_ALT
  		__be16		u6_addr16[8];
@@ -287,10 +285,10 @@
 --- a/include/linux/Kbuild	2017-11-08 14:31:51.682388557 +0100
 +++ b/include/linux/Kbuild	2017-11-08 14:32:48.701825317 +0100
 @@ -273,6 +273,7 @@
- 		  $(srctree)/include/asm-$(SRCARCH)/kvm_para.h),)
- unifdef-y += kvm_para.h
- endif
-+unifdef-y += libc-compat.h
- unifdef-y += llc.h
- unifdef-y += loop.h
- unifdef-y += lp.h
+ header-y += keyctl.h
+ header-y += l2tp.h
+ header-y += limits.h
++header-y += libc-compat.h
+ header-y += llc.h
+ header-y += loop.h
+ header-y += lp.h
