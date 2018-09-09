@@ -5,12 +5,6 @@ echo "MastaG, Persian Prince, Hains, moham96, kueken, lprot, Taapat"
 echo ""
 echo "Stage 1: git pull for new changes"
 echo ""
-cd meta-amlogic
-echo "Checking out meta-amlogic develop branch:"
-git checkout develop
-git pull
-echo -e "\n"
-cd ..
 cd meta-ax
 echo "Checking out meta-ax develop branch:"
 git checkout develop
@@ -107,6 +101,18 @@ git checkout develop
 git pull
 echo -e "\n"
 cd ..
+cd meta-linkdroid
+echo "Checking out meta-linkdroid develop branch:"
+git checkout develop
+git pull
+echo -e "\n"
+cd ..
+cd meta-minix
+echo "Checking out meta-minix develop branch:"
+git checkout develop
+git pull
+echo -e "\n"
+cd ..
 cd meta-octagon
 echo "Checking out meta-octagon develop branch:"
 git checkout develop
@@ -115,6 +121,12 @@ echo -e "\n"
 cd ..
 cd meta-odin
 echo "Checking out meta-odin develop branch:"
+git checkout develop
+git pull
+echo -e "\n"
+cd ..
+cd meta-odroid
+echo "Checking out meta-odroid develop branch:"
 git checkout develop
 git pull
 echo -e "\n"
@@ -139,6 +151,12 @@ echo -e "\n"
 cd ..
 cd meta-tripledot
 echo "Checking out meta-tripledot develop branch:"
+git checkout develop
+git pull
+echo -e "\n"
+cd ..
+cd meta-wetek
+echo "Checking out meta-wetek develop branch:"
 git checkout develop
 git pull
 echo -e "\n"

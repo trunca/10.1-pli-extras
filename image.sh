@@ -7,11 +7,11 @@ echo -e "Welcome to Persian Prince's image compile script!"
 echo -e "Check README.md and enter the meta you want to compile."
 echo -e "Answers are in green:"
 echo -e ""
-echo -e "${GREEN}Amlogic ${NC}- ${GREEN}AX ${NC}- ${GREEN}AZBox ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon"
-echo -e "${GREEN}Clap ${NC}- ${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox"
-echo -e "${GREEN}Entwopia ${NC}- ${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Octagon"
-echo -e "${GREEN}Odin ${NC}- ${GREEN}Protek ${NC}- ${GREEN}RaspberryPi ${NC}- ${GREEN}Tiviar ${NC}- ${GREEN}Tripledot ${NC}- ${GREEN}XCore"
-echo -e "${GREEN}XT ${NC}- ${GREEN}ALL ${NC}(Compiles all brands/models)"
+echo -e "${GREEN}AX ${NC}- ${GREEN}AZBox ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon ${NC}- ${GREEN}Clap"
+echo -e "${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Entwopia"
+echo -e "${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid ${NC}- ${GREEN}MINIX"
+echo -e "${GREEN}Octagon ${NC}- ${GREEN}Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}RaspberryPi ${NC}- ${GREEN}Tiviar"
+echo -e "${GREEN}Tripledot ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XT ${NC}- ${GREEN}ALL ${NC}(Compiles all brands/models)"
 echo -e ""
 echo -e "Enter the meta name:"
 echo -e ""
@@ -48,20 +48,6 @@ fi
 if [ $IMAGETYPE = "Feed" ]
 then
 	IMAGECMD='make feed'
-fi
-if [ $META = "Amlogic" ]
-then
-	MACHINE=alien5 $IMAGECMD
-	MACHINE=k1plus $IMAGECMD
-	MACHINE=k1pro $IMAGECMD
-	MACHINE=k2pro $IMAGECMD
-	MACHINE=k2prov2 $IMAGECMD
-	MACHINE=k3pro $IMAGECMD
-	MACHINE=odroidc2 $IMAGECMD
-	MACHINE=wetekhub $IMAGECMD
-	MACHINE=wetekplay $IMAGECMD
-	MACHINE=wetekplay2 $IMAGECMD
-	MACHINE=x8hp $IMAGECMD
 fi
 if [ $META = "AX" ]
 then
@@ -250,6 +236,19 @@ then
 	MACHINE=ixussone $IMAGECMD
 	MACHINE=ixusszero $IMAGECMD
 fi
+if [ $META = "Linkdroid" ]
+then
+	MACHINE=alien5 $IMAGECMD
+	MACHINE=k1plus $IMAGECMD
+	MACHINE=k1pro $IMAGECMD
+	MACHINE=k2pro $IMAGECMD
+	MACHINE=k2prov2 $IMAGECMD
+	MACHINE=k3pro $IMAGECMD
+fi
+if [ $META = "MINIX" ]
+then
+	MACHINE=x8hp $IMAGECMD
+fi
 if [ $META = "Octagon" ]
 then
 	MACHINE=sf4008 $IMAGECMD
@@ -270,6 +269,10 @@ then
 	MACHINE=geniuse3hd $IMAGECMD
 	MACHINE=maram9 $IMAGECMD
 	MACHINE=starsatlx $IMAGECMD
+fi
+if [ $META = "Odroid" ]
+then
+	MACHINE=odroidc2 $IMAGECMD
 fi
 if [ $META = "Protek" ]
 then
@@ -300,6 +303,12 @@ then
 	MACHINE=x1plus $IMAGECMD
 	MACHINE=xcombo $IMAGECMD
 fi
+if [ $META = "WeTek" ]
+then
+	MACHINE=wetekhub $IMAGECMD
+	MACHINE=wetekplay $IMAGECMD
+	MACHINE=wetekplay2 $IMAGECMD
+fi
 if [ $META = "XCore" ]
 then
 	MACHINE=bcm7358 $IMAGECMD
@@ -315,17 +324,6 @@ then
 fi
 if [ $META = "ALL" ]
 then
-	MACHINE=alien5 $IMAGECMD
-	MACHINE=k1plus $IMAGECMD
-	MACHINE=k1pro $IMAGECMD
-	MACHINE=k2pro $IMAGECMD
-	MACHINE=k2prov2 $IMAGECMD
-	MACHINE=k3pro $IMAGECMD
-	MACHINE=odroidc2 $IMAGECMD
-	MACHINE=wetekhub $IMAGECMD
-	MACHINE=wetekplay $IMAGECMD
-	MACHINE=wetekplay2 $IMAGECMD
-	MACHINE=x8hp $IMAGECMD
 	MACHINE=triplex $IMAGECMD
 	MACHINE=ultrabox $IMAGECMD
 	MACHINE=azboxhd $IMAGECMD
@@ -465,6 +463,13 @@ then
 	MACHINE=xpeedlx3 $IMAGECMD
 	MACHINE=ixussone $IMAGECMD
 	MACHINE=ixusszero $IMAGECMD
+	MACHINE=alien5 $IMAGECMD
+	MACHINE=k1plus $IMAGECMD
+	MACHINE=k1pro $IMAGECMD
+	MACHINE=k2pro $IMAGECMD
+	MACHINE=k2prov2 $IMAGECMD
+	MACHINE=k3pro $IMAGECMD
+	MACHINE=x8hp $IMAGECMD
 	MACHINE=sf4008 $IMAGECMD
 	MACHINE=sf5008 $IMAGECMD
 	MACHINE=sf8008 $IMAGECMD
@@ -480,6 +485,7 @@ then
 	MACHINE=geniuse3hd $IMAGECMD
 	MACHINE=maram9 $IMAGECMD
 	MACHINE=starsatlx $IMAGECMD
+	MACHINE=odroidc2 $IMAGECMD
 	MACHINE=9900lx $IMAGECMD
 	MACHINE=raspberrypi $IMAGECMD
 	MACHINE=raspberrypi0 $IMAGECMD
@@ -497,6 +503,9 @@ then
 	MACHINE=tyrant $IMAGECMD
 	MACHINE=x1plus $IMAGECMD
 	MACHINE=xcombo $IMAGECMD
+	MACHINE=wetekhub $IMAGECMD
+	MACHINE=wetekplay $IMAGECMD
+	MACHINE=wetekplay2 $IMAGECMD
 	MACHINE=bcm7358 $IMAGECMD
 	MACHINE=spycat4k $IMAGECMD
 	MACHINE=spycat4kcombo $IMAGECMD

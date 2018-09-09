@@ -1,18 +1,5 @@
 # Extra repositories for PLi's OE: https://github.com/OpenPLi/openpli-oe-core
 
-# Amlogic
-* alien5
-* k1plus
-* k1pro
-* k2pro
-* k2prov2
-* k3pro
-* odroidc2
-* wetekhub
-* wetekplay
-* wetekplay2
-* x8hp
-
 # AX
 * triplex
 * ultrabox
@@ -184,6 +171,17 @@
 * ixussone
 * ixusszero
 
+# Linkdroid
+* alien5
+* k1plus
+* k1pro
+* k2pro
+* k2prov2
+* k3pro
+
+# MINIX
+* x8hp
+
 # Octagon
 * sf4008
 * sf5008
@@ -202,6 +200,9 @@
 * geniuse3hd
 * maram9
 * starsatlx
+
+# Odroid
+* odroidc2
 
 # Protek
 * 9900lx
@@ -227,6 +228,11 @@
 * tyrant
 * x1plus
 * xcombo
+
+# WeTek
+* wetekhub
+* wetekplay
+* wetekplay2
 
 # XCore
 * bcm7358
