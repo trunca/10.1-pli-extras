@@ -70,3 +70,15 @@
 [submodule "meta-xt"]
 	path = meta-xt
 	url = https://github.com/PLi-metas/meta-xt.git
+[submodule "meta-wetek"]
+	path = meta-wetek
+	url = https://github.com/PLi-metas/meta-wetek.git
+[submodule "meta-linkdroid"]
+	path = meta-linkdroid
+	url = https://github.com/PLi-metas/meta-linkdroid.git
+[submodule "meta-minix"]
+	path = meta-minix
+	url = https://github.com/PLi-metas/meta-minix.git
+[submodule "meta-odroid"]
+	path = meta-odroid
+	url = https://github.com/PLi-metas/meta-odroid.git
