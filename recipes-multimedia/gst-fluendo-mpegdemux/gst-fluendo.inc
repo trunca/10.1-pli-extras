@@ -3,8 +3,6 @@ SECTION = "multimedia"
 HOMEPAGE = "http://www.fluendo.com/resources/source-plugins.php"
 DEPENDS = "gstreamer zlib"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
-
 inherit autotools pkgconfig
 
 SRC_URI = "http://core.fluendo.com/gstreamer/src/${BPN}/${BPN}-${PV}.tar.bz2 \
