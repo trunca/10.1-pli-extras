@@ -1,9 +1,7 @@
 #!/bin/sh
 echo ""
 echo "pli-extras by"
-echo "MastaG, Persian Prince, Hains, moham96, kueken, lprot, Taapat"
-echo ""
-echo "https://github.com/PLi-metas"
+echo "https://github.com/orgs/PLi-metas/people"
 echo ""
 echo "Each time you run this script all git repositories will get updated to their latest versions!"
 echo ""
