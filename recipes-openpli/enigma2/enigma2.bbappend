@@ -2,6 +2,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI_append += "\
 	file://defaultskin.patch \
+	file://09-undefine-macro-HAVE_CONFIG_H.patch \
 	${@bb.utils.contains("MACHINE_FEATURES", "epgcache1", "file://epgcache.patch", "", d)} \
 	${@bb.utils.contains("IMAGE_BASENAME", "pli-extras-enigma2", "file://prince.patch", "", d)} \
 	"
