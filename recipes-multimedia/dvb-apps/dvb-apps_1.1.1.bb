@@ -12,6 +12,9 @@ SRC_URI = " \
 			file://util-DVBC_ANNEX_AC.patch \
 "
 
+SRCREV_scantables = "ceb11833b35f05813b1f0397a60e0f3b99430aab"
+SRCREV_FORMAT = "apps_scantables"
+
 S = "${WORKDIR}/git"
 
 inherit gitpkgv
