@@ -59,8 +59,8 @@ git pull
 echo -e "\n"
 cd ..
 cd meta-dream
-echo "Checking out meta-dream develop branch:"
-git checkout develop
+echo "Checking out meta-dream sumo branch:"
+git checkout sumo
 git pull
 echo -e "\n"
 cd ..
@@ -77,8 +77,8 @@ git pull
 echo -e "\n"
 cd ..
 cd meta-fulan
-echo "Checking out meta-fulan develop branch:"
-git checkout develop
+echo "Checking out meta-fulan sumo branch:"
+git checkout sumo
 git pull
 echo -e "\n"
 cd ..
