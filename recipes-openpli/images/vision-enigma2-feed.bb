@@ -42,7 +42,7 @@ OPTIONAL_PACKAGES += " \
 	inetutils \
 	iperf3 \
 	iproute2 \
-	ipstraf \
+	iptraf \
 	iputils \
 	joe \
 	lirc \
