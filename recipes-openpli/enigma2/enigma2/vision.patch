@@ -109,18 +109,6 @@ diff -Naur enigma2-PLi/lib/python/Components/Sources/FrontendStatus.py enigma2-P
  			self.snr_db = status.get("tuner_signal_quality_db")
  			self.agc = status.get("tuner_signal_power")
  			self.ber = status.get("tuner_bit_error_rate")
-diff -Naur enigma2-PLi/lib/python/Components/Timezones.py enigma2-PersianPrince/lib/python/Components/Timezones.py
---- enigma2-PLi/lib/python/Components/Timezones.py	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/python/Components/Timezones.py	2018-08-13 12:42:12.680019093 +0430
-@@ -47,7 +47,7 @@
- 
- 	def getDefaultTimezone(self):
- 		# TODO return something more useful - depending on country-settings?
--		t = "(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Vienna"
-+		t = "(GMT+03:30) Tehran"
- 		for (a,b) in self.timezones:
- 			if a == t:
- 				return a
 diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrince/lib/python/Components/UsageConfig.py
 --- enigma2-PLi/lib/python/Components/UsageConfig.py	2018-08-12 13:51:13.000000000 +0430
 +++ enigma2-PersianPrince/lib/python/Components/UsageConfig.py	2018-08-13 12:35:47.068656039 +0430
@@ -204,95 +192,13 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  	SystemInfo["DVB-C_priority_tuner_available"] = len(dvbc_nims) > 3 and any(len(i) > 2 for i in (dvbs_nims, dvbt_nims, atsc_nims))
  	SystemInfo["ATSC_priority_tuner_available"] = len(atsc_nims) > 3 and any(len(i) > 2 for i in (dvbs_nims, dvbc_nims, dvbt_nims))
  
--	config.misc.disable_background_scan = ConfigYesNo(default = False)
-+	config.misc.disable_background_scan = ConfigYesNo(default = True)
+	config.misc.disable_background_scan = ConfigYesNo(default = False)
  	config.misc.use_ci_assignment = ConfigYesNo(default = False)
 -	config.usage.show_event_progress_in_servicelist = ConfigSelection(default = 'barright', choices = [
 +	config.usage.show_event_progress_in_servicelist = ConfigSelection(default = 'percright', choices = [
  		('barleft', _("Progress bar left")),
  		('barright', _("Progress bar right")),
  		('percleft', _("Percentage left")),
-@@ -395,11 +395,11 @@
- 	config.usage.boolean_graphic = ConfigYesNo(default=True)
- 
- 	config.epg = ConfigSubsection()
--	config.epg.eit = ConfigYesNo(default = True)
-+	config.epg.eit = ConfigYesNo(default = False)
- 	config.epg.mhw = ConfigYesNo(default = False)
--	config.epg.freesat = ConfigYesNo(default = True)
--	config.epg.viasat = ConfigYesNo(default = True)
--	config.epg.netmed = ConfigYesNo(default = True)
-+	config.epg.freesat = ConfigYesNo(default = False)
-+	config.epg.viasat = ConfigYesNo(default = False)
-+	config.epg.netmed = ConfigYesNo(default = False)
- 	config.epg.virgin = ConfigYesNo(default = False)
- 	config.misc.showradiopic = ConfigYesNo(default = True)
- 	def EpgSettingsChanged(configElement):
-@@ -481,7 +481,7 @@
- 		eBackgroundFileEraser.getInstance().setEraseSpeed(int(el.value))
- 	def updateEraseFlags(el):
- 		eBackgroundFileEraser.getInstance().setEraseFlags(int(el.value))
--	config.misc.erase_speed = ConfigSelection(default="20", choices = [
-+	config.misc.erase_speed = ConfigSelection(default="100", choices = [
- 		("10", _("10 MB/s")),
- 		("20", _("20 MB/s")),
- 		("50", _("50 MB/s")),
-@@ -707,16 +707,16 @@
- 
- 	def setEpgLanguage(configElement):
- 		eServiceEvent.setEPGLanguage(configElement.value)
--	config.autolanguage.audio_epglanguage = ConfigSelection(audio_language_choices[:1] + audio_language_choices [2:], default="---")
-+	config.autolanguage.audio_epglanguage = ConfigSelection(audio_language_choices[:1] + audio_language_choices [2:], default="eng qaa")
- 	config.autolanguage.audio_epglanguage.addNotifier(setEpgLanguage)
- 
- 	def setEpgLanguageAlternative(configElement):
- 		eServiceEvent.setEPGLanguageAlternative(configElement.value)
--	config.autolanguage.audio_epglanguage_alternative = ConfigSelection(audio_language_choices[:1] + audio_language_choices [2:], default="---")
-+	config.autolanguage.audio_epglanguage_alternative = ConfigSelection(audio_language_choices[:1] + audio_language_choices [2:], default="fas per fa pes")
- 	config.autolanguage.audio_epglanguage_alternative.addNotifier(setEpgLanguageAlternative)
- 
--	config.autolanguage.audio_autoselect1 = ConfigSelection(choices=audio_language_choices, default="---")
--	config.autolanguage.audio_autoselect2 = ConfigSelection(choices=audio_language_choices, default="---")
-+	config.autolanguage.audio_autoselect1 = ConfigSelection(choices=audio_language_choices, default="eng qaa")
-+	config.autolanguage.audio_autoselect2 = ConfigSelection(choices=audio_language_choices, default="fas per fa pes")
- 	config.autolanguage.audio_autoselect3 = ConfigSelection(choices=audio_language_choices, default="---")
- 	config.autolanguage.audio_autoselect4 = ConfigSelection(choices=audio_language_choices, default="---")
- 	config.autolanguage.audio_defaultac3 = ConfigYesNo(default = True)
-@@ -724,8 +724,8 @@
- 	config.autolanguage.audio_usecache = ConfigYesNo(default = True)
- 
- 	subtitle_language_choices = audio_language_choices[:1] + audio_language_choices [2:]
--	config.autolanguage.subtitle_autoselect1 = ConfigSelection(choices=subtitle_language_choices, default="---")
--	config.autolanguage.subtitle_autoselect2 = ConfigSelection(choices=subtitle_language_choices, default="---")
-+	config.autolanguage.subtitle_autoselect1 = ConfigSelection(choices=subtitle_language_choices, default="eng qaa")
-+	config.autolanguage.subtitle_autoselect2 = ConfigSelection(choices=subtitle_language_choices, default="fas per fa pes")
- 	config.autolanguage.subtitle_autoselect3 = ConfigSelection(choices=subtitle_language_choices, default="---")
- 	config.autolanguage.subtitle_autoselect4 = ConfigSelection(choices=subtitle_language_choices, default="---")
- 	config.autolanguage.subtitle_hearingimpaired = ConfigYesNo(default = False)
-diff -Naur enigma2-PLi/lib/python/Components/VolumeControl.py enigma2-PersianPrince/lib/python/Components/VolumeControl.py
---- enigma2-PLi/lib/python/Components/VolumeControl.py	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/python/Components/VolumeControl.py	2018-08-13 12:17:31.018308032 +0430
-@@ -21,7 +21,7 @@
- 		VolumeControl.instance = self
- 
- 		config.audio = ConfigSubsection()
--		config.audio.volume = ConfigInteger(default = 50, limits = (0, 100))
-+		config.audio.volume = ConfigInteger(default = 100, limits = (0, 100))
- 
- 		self.volumeDialog = session.instantiateDialog(Volume)
- 		self.muteDialog = session.instantiateDialog(Mute)
-diff -Naur enigma2-PLi/lib/python/Plugins/SystemPlugins/FastScan/plugin.py enigma2-PersianPrince/lib/python/Plugins/SystemPlugins/FastScan/plugin.py
---- enigma2-PLi/lib/python/Plugins/SystemPlugins/FastScan/plugin.py	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/python/Plugins/SystemPlugins/FastScan/plugin.py	2018-08-13 12:16:56.595179077 +0430
-@@ -18,7 +18,7 @@
- 
- config.misc.fastscan = ConfigSubsection()
- config.misc.fastscan.last_configuration = ConfigText(default="()")
--config.misc.fastscan.auto = ConfigSelection(default="true", choices=[("true", _("yes")), ("false", _("no")), ("multi", _("multi"))])
-+config.misc.fastscan.auto = ConfigSelection(default="false", choices=[("true", _("yes")), ("false", _("no")), ("multi", _("multi"))])
- config.misc.fastscan.autoproviders = ConfigText(default="()")
- config.misc.fastscan.drop = ConfigYesNo(default = True)
- 
 diff -Naur enigma2-PLi/lib/service/servicedvb.cpp enigma2-PersianPrince/lib/service/servicedvb.cpp
 --- enigma2-PLi/lib/service/servicedvb.cpp	2018-08-12 13:51:13.000000000 +0430
 +++ enigma2-PersianPrince/lib/service/servicedvb.cpp	2018-08-13 12:16:03.984525152 +0430
@@ -308,15 +214,3 @@ diff -Naur enigma2-PLi/lib/service/servicedvb.cpp enigma2-PersianPrince/lib/serv
  				return -3;
  			}
  		}
-diff -Naur enigma2-PLi/mytest.py enigma2-PersianPrince/mytest.py
---- enigma2-PLi/mytest.py	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/mytest.py	2018-08-13 12:14:47.754510874 +0430
-@@ -53,7 +53,7 @@
- profile("config.misc")
- config.misc.radiopic = ConfigText(default = resolveFilename(SCOPE_CURRENT_SKIN, "radio.mvi"))
- config.misc.blackradiopic = ConfigText(default = resolveFilename(SCOPE_CURRENT_SKIN, "black.mvi"))
--config.misc.useTransponderTime = ConfigYesNo(default=True)
-+config.misc.useTransponderTime = ConfigYesNo(default=False)
- config.misc.startCounter = ConfigInteger(default=0) # number of e2 starts...
- config.misc.standbyCounter = NoSave(ConfigInteger(default=0)) # number of standby
- config.misc.DeepStandby = NoSave(ConfigYesNo(default=False)) # detect deepstandby
