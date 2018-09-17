@@ -115,3 +115,5 @@ IMAGE_INSTALL += "\
 	wscan \
 	iptraf", d)} \
 	"
+
+IMAGE_BASENAME = "vision-enigma2"
