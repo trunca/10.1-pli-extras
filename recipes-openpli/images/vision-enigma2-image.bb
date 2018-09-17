@@ -41,6 +41,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-moviecut \
 	enigma2-plugin-extensions-openwebif-extras \
 	enigma2-plugin-extensions-pictureplayer \
+	enigma2-plugin-systemplugins-bh-skin-support \
 	enigma2-plugin-systemplugins-fastscan \
 	enigma2-plugin-systemplugins-hotplug \
 	enigma2-plugin-systemplugins-networkbrowser \
