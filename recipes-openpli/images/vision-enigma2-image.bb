@@ -1,20 +1,5 @@
 require vision-image.bb
 
-TEST01 = "${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rt7777", d)}"
-TEST02 = "${@bb.utils.contains("MACHINE", "dm800", "", "${TEST01}", d)}"
-TEST03 = "${@bb.utils.contains("MACHINE", "dm800se", "", "${TEST02}", d)}"
-TEST04 = "${@bb.utils.contains("MACHINE", "dm8000", "", "${TEST03}", d)}"
-TEST05 = "${@bb.utils.contains("MACHINE", "dm800sev2", "", "${TEST04}", d)}"
-TEST06 = "${@bb.utils.contains("MACHINE", "dm500hd", "", "${TEST05}", d)}"
-TEST07 = "${@bb.utils.contains("MACHINE", "dm7020hd", "", "${TEST06}", d)}"
-TEST08 = "${@bb.utils.contains("MACHINE", "dm7020hdv2", "", "${TEST07}", d)}"
-TEST09 = "${@bb.utils.contains("MACHINE", "dm520", "", "${TEST08}", d)}"
-TEST10 = "${@bb.utils.contains("MACHINE", "dm7080", "", "${TEST09}", d)}"
-TEST11 = "${@bb.utils.contains("MACHINE", "dm820", "", "${TEST10}", d)}"
-TEST12 = "${@bb.utils.contains("MACHINE", "dm500hdv2", "", "${TEST11}", d)}"
-TEST13 = "${@bb.utils.contains("MACHINE", "ixussone", "", "${TEST12}", d)}"
-RT7777 = "${@bb.utils.contains("MACHINE", "ixusszero", "", "${TEST13}", d)}"
-
 KERNEL_WIFI_DRIVERS += "\
 	firmware-carl9170 \
 	firmware-htc7010 \
@@ -100,7 +85,6 @@ DEPENDS += "\
 	"
 
 IMAGE_INSTALL += "\
-	${RT7777} \
 	aio-grab \
 	enigma2 \
 	libavahi-client \
@@ -131,5 +115,3 @@ IMAGE_INSTALL += "\
 	wscan \
 	iptraf", d)} \
 	"
-
-export IMAGE_BASENAME = "vision-enigma2"
