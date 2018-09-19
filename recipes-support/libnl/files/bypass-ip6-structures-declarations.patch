@@ -1,0 +1,14 @@
+diff --git a/include/linux-private/linux/ipv6.h b/include/linux-private/linux/ipv6.h
+index e05e684..a03a891 100644
+--- a/include/linux-private/linux/ipv6.h
++++ b/include/linux-private/linux/ipv6.h
+@@ -2,7 +2,9 @@
+ #define _IPV6_H
+ 
+ #include <asm/byteorder.h>
++#define IP6_STRUCTURES 1
+ #include <linux/in6.h>
++#undef IP6_STRUCTURES
+ 
+ /* The latest drafts declared increase in minimal mtu up to 1280. */
+ 

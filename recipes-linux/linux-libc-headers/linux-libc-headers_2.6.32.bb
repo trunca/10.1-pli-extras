@@ -6,6 +6,7 @@ SRC_URI[sha256sum] = "5099786d80b8407d98a619df00209c2353517f22d804fdd9533b362adc
 SRC_URI += "file://linuxdvb.patch \
     file://ppp.patch \
     file://types.patch \
+    file://set-structures-in-preprocessing-directive.patch \
 "
 
 # sh4 boxes require some headers from the kernel modules (for the framebuffer and ioctls) which are not shipped by the kernel headers. In order to avoid adding explicit sh4-conditional dependancies to the driver package in several packages (just for a couple of generic headers) we add them here. In this way, we also avoid unnecessary rebuilds of several stuff when drivers are updated.

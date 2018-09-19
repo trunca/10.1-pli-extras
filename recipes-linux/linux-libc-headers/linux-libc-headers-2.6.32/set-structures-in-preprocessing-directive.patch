@@ -1,0 +1,20 @@
+diff --git a/include/linux/in6.h b/include/linux/in6.h
+index 718bf21c..2f8b8aa3 100644
+--- a/include/linux/in6.h
++++ b/include/linux/in6.h
+@@ -27,6 +27,7 @@
+  *	IPv6 address structure
+  */
+ 
++#ifndef IP6_STRUCTURES
+ struct in6_addr
+ {
+ 	union 
+@@ -87,6 +88,7 @@ struct in6_flowlabel_req
+ 	__u32	__flr_pad;
+ 	/* Options in format of IPV6_PKTOPTIONS */
+ };
++#endif
+ 
+ #define IPV6_FL_A_GET	0
+ #define IPV6_FL_A_PUT	1

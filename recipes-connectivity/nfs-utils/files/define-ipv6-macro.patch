@@ -1,0 +1,14 @@
+diff --git a/utils/mount/network.c b/utils/mount/network.c
+index 7dceb2d..55f9c5e 100644
+--- a/utils/mount/network.c
++++ b/utils/mount/network.c
+@@ -38,7 +38,9 @@
+ #include <sys/socket.h>
+ #include <sys/wait.h>
+ #include <sys/stat.h>
++#define IP6_STRUCTURES 1
+ #include <linux/in6.h>
++#undef IP6_STRUCTURES
+ #include <netinet/in.h>
+ #include <rpc/rpc.h>
+ #include <rpc/pmap_prot.h>
