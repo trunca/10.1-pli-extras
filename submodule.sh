@@ -59,8 +59,8 @@ git pull
 echo -e "\n"
 cd ..
 cd meta-dream
-echo "Checking out meta-dream develop branch:"
-git checkout develop
+echo "Checking out meta-dream test-dm800 branch:"
+git checkout test-dm800
 git pull
 echo -e "\n"
 cd ..
