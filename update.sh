@@ -1,7 +1,7 @@
 #!/bin/sh
 echo ""
 echo "pli-extras by"
-echo "https://github.com/orgs/PLi-metas/people"
+echo "https://github.com/trunca/10.1-pli-extras"
 echo ""
 echo "Each time you run this script all git repositories will get updated to their latest versions!"
 echo ""
