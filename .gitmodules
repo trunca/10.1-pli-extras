@@ -30,7 +30,7 @@
 	url = https://github.com/PLi-metas/meta-ceryon.git
 [submodule "meta-dinobot"]
 	path = meta-dinobot
-	url = https://github.com/PLi-metas/meta-dinobot.git
+	url = https://github.com/OpenVisionE2/meta-dinobot.git
 [submodule "meta-azbox"]
 	path = meta-azbox
 	url = https://github.com/PLi-metas/meta-azbox.git
